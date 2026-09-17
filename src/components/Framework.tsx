@@ -1,10 +1,26 @@
+import { useState } from 'react';
 import { frameworkTable, promoQuestions } from '../data/content';
-import { LayoutGrid, ArrowRight } from 'lucide-react';
+import { LayoutGrid, ArrowRight, Filter } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+
+type Category = 'all' | 'behavioral' | 'operational' | 'commercial' | 'general';
 
 export default function Framework() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+  const [activeCategory, setActiveCategory] = useState<Category>('all');
+
+  const filteredTable = activeCategory === 'all'
+    ? frameworkTable
+    : frameworkTable.filter(e => e.category === activeCategory);
+
+  const categories: { id: Category; label: string; color: string }[] = [
+    { id: 'all', label: 'All', color: isDark ? 'text-gray-300 bg-gray-700' : 'text-gray-700 bg-gray-200' },
+    { id: 'general', label: 'General', color: isDark ? 'text-blue-400 bg-blue-900/30' : 'text-blue-700 bg-blue-100' },
+    { id: 'operational', label: 'Operational', color: isDark ? 'text-emerald-400 bg-emerald-900/30' : 'text-emerald-700 bg-emerald-100' },
+    { id: 'behavioral', label: 'Behavioral', color: isDark ? 'text-purple-400 bg-purple-900/30' : 'text-purple-700 bg-purple-100' },
+    { id: 'commercial', label: 'Commercial', color: isDark ? 'text-amber-400 bg-amber-900/30' : 'text-amber-700 bg-amber-100' },
+  ];
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -16,6 +32,36 @@ export default function Framework() {
         <p className={`leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
           The goal is <strong className={isDark ? 'text-white' : 'text-gray-900'}>not to memorize dozens of answers</strong>. Use the core responses dynamically and adapt them to the question being asked.
         </p>
+        <div className={`mt-4 flex items-center gap-2 text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
+          <Filter className="w-4 h-4" />
+          <span><strong className={isDark ? 'text-white' : 'text-gray-900'}>{filteredTable.length}</strong> questions mapped to <strong className={isDark ? 'text-white' : 'text-gray-900'}>6 core responses</strong></span>
+        </div>
+      </div>
+
+      {/* Category Filters — NEW */}
+      <div className="mb-6">
+        <div className="flex flex-wrap gap-2">
+          {categories.map(cat => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                activeCategory === cat.id
+                  ? cat.color + (isDark ? ' ring-1 ring-current' : ' ring-1 ring-current/20')
+                  : isDark
+                    ? 'text-gray-500 hover:text-gray-300 hover:bg-[#2f2f2f]'
+                    : 'text-gray-400 hover:text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              {cat.label}
+              {cat.id !== 'all' && (
+                <span className="ml-1.5 opacity-60">
+                  {frameworkTable.filter(e => e.category === cat.id).length}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Main Framework Table */}
@@ -30,7 +76,7 @@ export default function Framework() {
           isDark ? 'bg-[#202020] border-[#2f2f2f]' : 'bg-white border-gray-200'
         }`}>
           <div className={`grid grid-cols-1 ${isDark ? 'divide-[#2f2f2f]' : 'divide-gray-100'}`}>
-            {frameworkTable.map((entry, index) => (
+            {filteredTable.map((entry, index) => (
               <div
                 key={index}
                 className={`grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-2 md:gap-4 px-5 py-3.5 transition-colors ${
@@ -105,7 +151,7 @@ export default function Framework() {
               Core KBs
             </span>
             <span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-              Career Story + Day-to-Day Operations + Evidence
+              Career Story + Day-to-Day Operations + Evidence (Success &amp; Failure)
             </span>
           </div>
           <div className="flex items-start gap-3">
@@ -117,7 +163,7 @@ export default function Framework() {
               Bridge
             </span>
             <span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-              SEO + PPC + Promotions
+              SEO + PPC + Promotions + Tools &amp; Metrics
             </span>
           </div>
           <div className="flex items-start gap-3">

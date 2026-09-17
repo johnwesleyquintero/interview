@@ -1,6 +1,6 @@
 import { InterviewSection } from '../data/content';
 import Timer from './Timer';
-import { MessageCircle, Clock } from 'lucide-react';
+import { MessageCircle, Clock, ArrowRight, Wrench, BarChart3 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 interface SectionContentProps {
@@ -37,6 +37,100 @@ export default function SectionContent({ section }: SectionContentProps) {
           </p>
         </div>
       </div>
+
+      {/* Also Answers — NEW */}
+      {section.alsoAnswers && section.alsoAnswers.length > 0 && (
+        <div className={`mb-6 border rounded-xl p-4 ${
+          isDark
+            ? 'bg-purple-900/15 border-purple-500/25'
+            : 'bg-purple-50 border-purple-200'
+        }`}>
+          <div className="flex items-center gap-2 mb-3">
+            <ArrowRight className={`w-4 h-4 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
+            <h4 className={`text-sm font-semibold uppercase tracking-wide ${
+              isDark ? 'text-purple-400' : 'text-purple-700'
+            }`}>
+              Also answers these questions
+            </h4>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {section.alsoAnswers.map((q, i) => (
+              <span
+                key={i}
+                className={`text-xs px-2.5 py-1.5 rounded-md border ${
+                  isDark
+                    ? 'bg-purple-500/10 border-purple-500/20 text-purple-300'
+                    : 'bg-white border-purple-200 text-purple-700'
+                }`}
+              >
+                {q}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Tools & Metrics — NEW */}
+      {(section.tools || section.metrics) && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+          {section.tools && section.tools.length > 0 && (
+            <div className={`border rounded-xl p-4 ${
+              isDark ? 'bg-[#2f2f2f]/50 border-[#3a3a3a]' : 'bg-gray-50 border-gray-200'
+            }`}>
+              <div className="flex items-center gap-2 mb-2">
+                <Wrench className={`w-4 h-4 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />
+                <h4 className={`text-xs font-semibold uppercase tracking-wide ${
+                  isDark ? 'text-emerald-400' : 'text-emerald-700'
+                }`}>
+                  Tools Mentioned
+                </h4>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {section.tools.map((tool, i) => (
+                  <span
+                    key={i}
+                    className={`text-xs px-2 py-1 rounded-md ${
+                      isDark
+                        ? 'bg-emerald-500/10 text-emerald-300'
+                        : 'bg-emerald-100 text-emerald-700'
+                    }`}
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          {section.metrics && section.metrics.length > 0 && (
+            <div className={`border rounded-xl p-4 ${
+              isDark ? 'bg-[#2f2f2f]/50 border-[#3a3a3a]' : 'bg-gray-50 border-gray-200'
+            }`}>
+              <div className="flex items-center gap-2 mb-2">
+                <BarChart3 className={`w-4 h-4 ${isDark ? 'text-amber-400' : 'text-amber-600'}`} />
+                <h4 className={`text-xs font-semibold uppercase tracking-wide ${
+                  isDark ? 'text-amber-400' : 'text-amber-700'
+                }`}>
+                  Key Metrics
+                </h4>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {section.metrics.map((metric, i) => (
+                  <span
+                    key={i}
+                    className={`text-xs px-2 py-1 rounded-md ${
+                      isDark
+                        ? 'bg-amber-500/10 text-amber-300'
+                        : 'bg-amber-100 text-amber-700'
+                    }`}
+                  >
+                    {metric}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Timer */}
       <Timer targetTime={section.target} />

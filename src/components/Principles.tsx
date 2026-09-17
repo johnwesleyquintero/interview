@@ -157,7 +157,7 @@ export default function Principles() {
             number={5}
             color="rose"
             isDark={isDark}
-            text={<>Remember: <strong className={isDark ? 'text-white' : 'text-gray-900'}>5 core responses</strong> can answer <strong className={isDark ? 'text-white' : 'text-gray-900'}>20+ interview questions</strong>. The router maps questions to the right response.</>}
+            text={<>Remember: <strong className={isDark ? 'text-white' : 'text-gray-900'}>6 core responses</strong> can answer <strong className={isDark ? 'text-white' : 'text-gray-900'}>45+ interview questions</strong>. The router maps questions to the right response.</>}
           />
         </div>
       </div>
