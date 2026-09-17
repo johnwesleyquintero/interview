@@ -10,6 +10,7 @@ import {
   X,
   Sun,
   Moon,
+  Sparkles,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -30,6 +31,7 @@ const navItems = [
   { id: 'commercial-optimization', label: 'Commercial Opt.', icon: TrendingUp },
   { id: 'framework', label: 'Response Framework', icon: LayoutGrid },
   { id: 'principles', label: 'Core Principles', icon: Brain },
+  { id: 'insights', label: 'Additional Insights', icon: Sparkles },
 ];
 
 export default function Sidebar({ activeSection, onSectionChange, isOpen, onToggle }: SidebarProps) {
