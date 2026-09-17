@@ -195,11 +195,11 @@ export const sections: InterviewSection[] = [
     content: [
       {
         type: 'text',
-        value: '**Situation:** We had a kitchen gadget ASIN that was stuck at **2.4 stars with 180+ reviews**. The listing had poor-quality images, weak bullet points, no A+ Content, and was ranking on page 3 for our main keywords. Sales had dropped **60% over 6 months** and the return rate was **18%** — well above the category average of 8%.',
+        value: '**Situation:** We had a Seculife GPS tracker ASIN for kids that was stuck at **2.6 stars with 210+ reviews**. The listing had poor-quality images, weak bullet points, no A+ Content, and was ranking on page 4 for our main keywords like \'GPS tracker for kids\' and \'kids location tracker\'. Sales had dropped **55% over 6 months** and the return rate was **22%** — well above the Electronics category average of 10%.',
       },
       {
         type: 'text',
-        value: '**Task:** I needed to determine whether we could rehabilitate this listing or if we should recreate it as a new ASIN. The brand owner wanted to save the reviews, but the negative feedback was overwhelming — customers were complaining about **unclear instructions, missing parts, and misleading images**.',
+        value: '**Task:** I needed to determine whether we could rehabilitate this listing or if we should recreate it as a new ASIN. The brand owner wanted to save the reviews, but the negative feedback was overwhelming — customers were complaining about **difficult app setup, poor battery life, inaccurate location tracking, and unclear instructions about the SIM card requirement and monthly subscription fees**.',
       },
       {
         type: 'text',
@@ -207,27 +207,27 @@ export const sections: InterviewSection[] = [
       },
       {
         type: 'text',
-        value: "The data was clear: **the reviews were beyond salvation**. Even if we fixed the product issues, the 2.4-star rating would continue to suppress conversion. I recommended we **close the old ASIN and launch a new one** with improved packaging, better instructions, and a completely optimized listing.",
+        value: "The data was clear: **the reviews were beyond salvation**. Even if we fixed the product issues, the 2.6-star rating would continue to suppress conversion. I recommended we **close the old ASIN and launch a new one** with improved packaging, a quick-start guide, better app onboarding, and a completely optimized listing that clearly communicated the SIM card and subscription requirements upfront.",
       },
       {
         type: 'text',
-        value: "**Keyword Research:** I used **Helium 10 Cerebro** to reverse-ASIN our top 3 competitors and extract their highest-converting keywords. I then used **Magnet** to expand the keyword list and **Amazon's Search Box** to find long-tail variations. I ran everything through **Frankenstein** to remove duplicates and **Scribbles** to ensure we hit all high-value keywords in the title, bullets, and backend.",
+        value: "**Keyword Research:** I used **Helium 10 Cerebro** to reverse-ASIN our top 3 competitors in the GPS tracker category and extract their highest-converting keywords. I then used **Magnet** to expand the keyword list and **Amazon's Search Box** to find long-tail variations like 'GPS tracker for elderly parents' and 'real-time GPS tracker no monthly fee' (even though we did have a subscription). I ran everything through **Frankenstein** to remove duplicates and **Scribbles** to ensure we hit all high-value keywords in the title, bullets, and backend.",
       },
       {
         type: 'text',
-        value: "**Title & Bullets:** I wrote a keyword-optimized title following Amazon's style guide — brand + key feature + size/quantity + main benefit. For bullets, I used the **feature-benefit-proof structure**: each bullet started with a feature in caps, explained the benefit, and included social proof or specifications. I made sure to address the top 3 customer pain points from the old reviews.",
+        value: "**Title & Bullets:** I wrote a keyword-optimized title following Amazon's style guide — brand + key feature + target user + main benefit. For bullets, I used the **feature-benefit-proof structure**: each bullet started with a feature in caps, explained the benefit, and included social proof or specifications. I made sure to address the top 3 customer pain points from the old reviews: app setup difficulty, battery life expectations, and subscription transparency.",
       },
       {
         type: 'text',
-        value: "**Images:** I worked with the design team to create **7 high-quality images**: main image on white background, lifestyle images showing the product in use, infographic images highlighting key features, and a size/comparison chart. I also added **alt text to every image** using relevant keywords — this is often overlooked but helps with Amazon's A9 algorithm.",
+        value: "**Images:** I worked with the design team to create **7 high-quality images**: main image on white background showing the tracker device, lifestyle images showing a parent using the app to check their child's location, infographic images highlighting key features like real-time tracking, geofencing, and SOS button, and a comparison chart showing different Seculife models. I also added **alt text to every image** using relevant keywords — this is often overlooked but helps with Amazon's A9 algorithm.",
       },
       {
         type: 'text',
-        value: "**A+ Content:** I built a complete A+ Content module with **comparison charts, lifestyle imagery, and brand story**. I used the **3-module layout**: brand story at the top, feature highlights in the middle, and comparison chart at the bottom. I made sure the A+ Content reinforced the key selling points and addressed customer objections.",
+        value: "**A+ Content:** I built a complete A+ Content module with **comparison charts, lifestyle imagery, and brand story**. I used the **3-module layout**: brand story at the top explaining Seculife's mission to keep families connected, feature highlights in the middle showing real-world use cases (kids at school, elderly parents living alone), and comparison chart at the bottom comparing Seculife to competitors. I made sure the A+ Content reinforced the key selling points and addressed customer objections about subscription costs by emphasizing the value of peace of mind.",
       },
       {
         type: 'text',
-        value: "**Backend Search Terms:** I filled all 250 bytes with relevant keywords that weren't already in the title or bullets. I avoided repetition, used singular forms, and included common misspellings and Spanish translations since we were selling in the US marketplace.",
+        value: "**Backend Search Terms:** I filled all 250 bytes with relevant keywords that weren't already in the title or bullets. I avoided repetition, used singular forms, and included common misspellings and Spanish translations since we were selling in the US marketplace. I also included related terms like 'child locator', 'senior tracker', and 'family safety'.",
       },
       {
         type: 'text',
@@ -235,7 +235,7 @@ export const sections: InterviewSection[] = [
       },
       {
         type: 'highlight',
-        value: "**Result:** Within 90 days, the new ASIN reached **4.3 stars with 85 reviews**, conversion rate improved from **8% to 15%**, and we were ranking on **page 1 for 12 of our top 20 keywords**. Sales increased **340% compared to the old ASIN's final month**, and the return rate dropped to **6%** — below the category average. The listing audit and recreation process became a template we used for 4 other underperforming ASINs that quarter.",
+        value: "**Result:** Within 90 days, the new ASIN reached **4.4 stars with 92 reviews**, conversion rate improved from **7% to 16%**, and we were ranking on **page 1 for 14 of our top 20 keywords** including 'GPS tracker for kids' and 'GPS tracker for elderly'. Sales increased **380% compared to the old ASIN's final month**, and the return rate dropped to **8%** — below the Electronics category average. The listing audit and recreation process became a template we used for 3 other underperforming Seculife ASINs that quarter.",
       },
     ],
     keyPoints: [
@@ -245,6 +245,7 @@ export const sections: InterviewSection[] = [
       'Alt text on images is often overlooked but helps with A9 algorithm indexing.',
       'A+ Content should reinforce key selling points and address customer objections, not just look pretty.',
       'Launch strategy matters — PPC, Vine, and promotions in the first 30 days are critical for ranking.',
+      'For technical products like GPS trackers, be transparent about requirements (SIM cards, subscriptions, app setup) in the listing to reduce returns.',
     ],
   },
   {
@@ -264,7 +265,7 @@ export const sections: InterviewSection[] = [
     content: [
       {
         type: 'text',
-        value: '**Situation:** Early in my role as an E-commerce Operations Manager, I was responsible for inventory planning for one of our top-selling ASINs. I had been managing replenishment manually using spreadsheets and sales velocity calculations.',
+        value: '**Situation:** Early in my role as an E-commerce Operations Manager for Seculife GPS trackers, I was responsible for inventory planning for our best-selling kids GPS tracker ASIN. I had been managing replenishment manually using spreadsheets and sales velocity calculations.',
       },
       {
         type: 'text',
