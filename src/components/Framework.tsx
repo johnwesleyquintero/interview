@@ -34,7 +34,7 @@ export default function Framework() {
         </p>
         <div className={`mt-4 flex items-center gap-2 text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
           <Filter className="w-4 h-4" />
-          <span><strong className={isDark ? 'text-white' : 'text-gray-900'}>{filteredTable.length}</strong> questions mapped to <strong className={isDark ? 'text-white' : 'text-gray-900'}>6 core responses</strong></span>
+          <span><strong className={isDark ? 'text-white' : 'text-gray-900'}>{filteredTable.length}</strong> questions mapped to <strong className={isDark ? 'text-white' : 'text-gray-900'}>7 core responses</strong></span>
         </div>
       </div>
 
@@ -151,7 +151,7 @@ export default function Framework() {
               Core KBs
             </span>
             <span className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-              Career Story + Day-to-Day Operations + Evidence (Success &amp; Failure)
+              Career Story + Day-to-Day Operations + Evidence (Success, Failure &amp; Listing Audit)
             </span>
           </div>
           <div className="flex items-start gap-3">

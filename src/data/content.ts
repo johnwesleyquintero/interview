@@ -172,6 +172,82 @@ export const sections: InterviewSection[] = [
     ],
   },
   {
+    id: 'star-listing',
+    title: 'STAR — Listing Audit & Recreation',
+    target: '1–2 minutes',
+    question: '"Tell me about a time you improved or recreated a listing."',
+    alsoAnswers: [
+      '"How do you create a listing?"',
+      '"How do you audit a listing?"',
+      '"How do you improve a listing?"',
+      '"When would you recreate a listing?"',
+      '"How do you do keyword research?"',
+      '"How do you optimize A+ Content?"',
+      '"How do you handle bad reviews?"',
+      '"How do you improve conversion rate?"',
+      '"How do you use Helium 10?"',
+      '"What\'s your SEO process?"',
+      '"How do you optimize images?"',
+      '"How do you write bullet points?"',
+    ],
+    tools: ['Helium 10 (Cerebro, Magnet, Scribbles, Frankenstein)', 'Amazon Search Box', 'Brand Analytics', 'A+ Content Manager', 'Image optimization tools'],
+    metrics: ['Session percentage', 'Unit session percentage', 'Conversion rate', 'Organic rank', 'Review rating', 'Return rate'],
+    content: [
+      {
+        type: 'text',
+        value: '**Situation:** We had a kitchen gadget ASIN that was stuck at **2.4 stars with 180+ reviews**. The listing had poor-quality images, weak bullet points, no A+ Content, and was ranking on page 3 for our main keywords. Sales had dropped **60% over 6 months** and the return rate was **18%** — well above the category average of 8%.',
+      },
+      {
+        type: 'text',
+        value: '**Task:** I needed to determine whether we could rehabilitate this listing or if we should recreate it as a new ASIN. The brand owner wanted to save the reviews, but the negative feedback was overwhelming — customers were complaining about **unclear instructions, missing parts, and misleading images**.',
+      },
+      {
+        type: 'text',
+        value: "**Action — The Audit:** I started with a full listing audit using **Helium 10's Listing Analyzer**. I checked keyword coverage, image quality, bullet point structure, and conversion metrics. I also pulled the **Voice of the Customer dashboard** and analyzed the top 50 negative reviews to identify patterns.",
+      },
+      {
+        type: 'text',
+        value: "The data was clear: **the reviews were beyond salvation**. Even if we fixed the product issues, the 2.4-star rating would continue to suppress conversion. I recommended we **close the old ASIN and launch a new one** with improved packaging, better instructions, and a completely optimized listing.",
+      },
+      {
+        type: 'text',
+        value: "**Keyword Research:** I used **Helium 10 Cerebro** to reverse-ASIN our top 3 competitors and extract their highest-converting keywords. I then used **Magnet** to expand the keyword list and **Amazon's Search Box** to find long-tail variations. I ran everything through **Frankenstein** to remove duplicates and **Scribbles** to ensure we hit all high-value keywords in the title, bullets, and backend.",
+      },
+      {
+        type: 'text',
+        value: "**Title & Bullets:** I wrote a keyword-optimized title following Amazon's style guide — brand + key feature + size/quantity + main benefit. For bullets, I used the **feature-benefit-proof structure**: each bullet started with a feature in caps, explained the benefit, and included social proof or specifications. I made sure to address the top 3 customer pain points from the old reviews.",
+      },
+      {
+        type: 'text',
+        value: "**Images:** I worked with the design team to create **7 high-quality images**: main image on white background, lifestyle images showing the product in use, infographic images highlighting key features, and a size/comparison chart. I also added **alt text to every image** using relevant keywords — this is often overlooked but helps with Amazon's A9 algorithm.",
+      },
+      {
+        type: 'text',
+        value: "**A+ Content:** I built a complete A+ Content module with **comparison charts, lifestyle imagery, and brand story**. I used the **3-module layout**: brand story at the top, feature highlights in the middle, and comparison chart at the bottom. I made sure the A+ Content reinforced the key selling points and addressed customer objections.",
+      },
+      {
+        type: 'text',
+        value: "**Backend Search Terms:** I filled all 250 bytes with relevant keywords that weren't already in the title or bullets. I avoided repetition, used singular forms, and included common misspellings and Spanish translations since we were selling in the US marketplace.",
+      },
+      {
+        type: 'text',
+        value: "**Launch Strategy:** For the first 30 days, I ran an aggressive **PPC campaign** with automatic and manual campaigns targeting our top 20 keywords. I also set up a **Vine enrollment** to get early reviews and used **Lightning Deals** to drive initial sales velocity. I monitored the **session percentage and unit session percentage** daily to track conversion.",
+      },
+      {
+        type: 'highlight',
+        value: "**Result:** Within 90 days, the new ASIN reached **4.3 stars with 85 reviews**, conversion rate improved from **8% to 15%**, and we were ranking on **page 1 for 12 of our top 20 keywords**. Sales increased **340% compared to the old ASIN's final month**, and the return rate dropped to **6%** — below the category average. The listing audit and recreation process became a template we used for 4 other underperforming ASINs that quarter.",
+      },
+    ],
+    keyPoints: [
+      'Know when to improve vs. recreate — if reviews are below 3 stars and return rate is 2x category average, recreation is often the better choice.',
+      'Use Helium 10 Cerebro for competitive keyword research and Magnet for keyword expansion.',
+      'Amazon Search Box autocomplete is a goldmine for long-tail keywords.',
+      'Alt text on images is often overlooked but helps with A9 algorithm indexing.',
+      'A+ Content should reinforce key selling points and address customer objections, not just look pretty.',
+      'Launch strategy matters — PPC, Vine, and promotions in the first 30 days are critical for ranking.',
+    ],
+  },
+  {
     id: 'star-failure',
     title: 'STAR — Failure & Learning Case',
     target: '1–2 minutes',
@@ -360,6 +436,20 @@ export const frameworkTable: FrameworkEntry[] = [
   { question: '"How do you handle ambiguity?"', response: 'APN Evidence (STAR)', category: 'behavioral' },
   { question: '"Tell me about a time you used data."', response: 'APN Evidence (STAR)', category: 'behavioral' },
   { question: '"How do you work with other teams?"', response: 'APN Evidence + Day-to-Day', category: 'behavioral' },
+  
+  // Listing & SEO
+  { question: '"How do you create a listing?"', response: 'Listing Audit STAR', category: 'operational' },
+  { question: '"How do you audit a listing?"', response: 'Listing Audit STAR', category: 'operational' },
+  { question: '"How do you improve a listing?"', response: 'Listing Audit STAR', category: 'operational' },
+  { question: '"When would you recreate a listing?"', response: 'Listing Audit STAR', category: 'operational' },
+  { question: '"How do you do keyword research?"', response: 'Listing Audit STAR + Commercial Opt.', category: 'operational' },
+  { question: '"How do you optimize A+ Content?"', response: 'Listing Audit STAR', category: 'operational' },
+  { question: '"How do you handle bad reviews?"', response: 'Listing Audit STAR', category: 'operational' },
+  { question: '"How do you improve conversion rate?"', response: 'Listing Audit STAR + Commercial Opt.', category: 'operational' },
+  { question: '"How do you use Helium 10?"', response: 'Listing Audit STAR', category: 'operational' },
+  { question: '"What\'s your SEO process?"', response: 'Listing Audit STAR + Commercial Opt.', category: 'operational' },
+  { question: '"How do you optimize images?"', response: 'Listing Audit STAR', category: 'operational' },
+  { question: '"How do you write bullet points?"', response: 'Listing Audit STAR', category: 'operational' },
   
   // Behavioral — Failure / Learning
   { question: '"Tell me about a time you failed."', response: 'Failure & Learning (STAR)', category: 'behavioral' },
