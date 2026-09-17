@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import SectionContent from './components/SectionContent';
 import Framework from './components/Framework';
 import Principles from './components/Principles';
+import AdditionalInsights from './components/AdditionalInsights';
 import { sections } from './data/content';
 import { useTheme } from './context/ThemeContext';
 
@@ -17,6 +18,9 @@ export default function App() {
     }
     if (activeSection === 'principles') {
       return <Principles />;
+    }
+    if (activeSection === 'insights') {
+      return <AdditionalInsights />;
     }
     const section = sections.find((s) => s.id === activeSection);
     if (section) {
