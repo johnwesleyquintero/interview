@@ -53,11 +53,16 @@ Interactive tables mapping interview questions to the appropriate core response:
 
 ### 🎨 UI/UX
 
-- Dark theme optimized for focus and readability
+- **Notion-inspired light/dark mode** with smooth transitions
+- Light mode: warm off-white backgrounds, clean typography
+- Dark mode: deep dark backgrounds, easy on the eyes
+- Theme preference saved to localStorage
+- Respects system color scheme preference
+- Sun/moon toggle button in the sidebar header
 - Responsive design with mobile sidebar
 - Bold keyword highlighting for key talking points
 - Smooth transitions and hover effects
-- Custom scrollbar styling
+- Custom scrollbar styling per theme
 
 ---
 
