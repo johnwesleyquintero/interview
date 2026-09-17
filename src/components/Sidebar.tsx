@@ -8,7 +8,10 @@ import {
   Brain,
   Menu,
   X,
+  Sun,
+  Moon,
 } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 interface SidebarProps {
   activeSection: string;
@@ -28,12 +31,18 @@ const navItems = [
 ];
 
 export default function Sidebar({ activeSection, onSectionChange, isOpen, onToggle }: SidebarProps) {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <>
       {/* Mobile toggle */}
       <button
         onClick={onToggle}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2.5 bg-slate-800 border border-slate-700 rounded-lg text-white shadow-lg"
+        className={`lg:hidden fixed top-4 left-4 z-50 p-2.5 rounded-lg shadow-lg border ${
+          theme === 'dark'
+            ? 'bg-[#202020] border-[#2f2f2f] text-white'
+            : 'bg-white border-gray-200 text-gray-700'
+        }`}
       >
         {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
@@ -41,27 +50,55 @@ export default function Sidebar({ activeSection, onSectionChange, isOpen, onTogg
       {/* Overlay */}
       {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/50 z-30"
+          className="lg:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
           onClick={onToggle}
         />
       )}
 
       {/* Sidebar */}
       <aside
-        className={`fixed lg:sticky top-0 left-0 h-screen w-72 bg-slate-900 border-r border-slate-800 z-40 transform transition-transform duration-300 ${
+        className={`fixed lg:sticky top-0 left-0 h-screen w-72 border-r z-40 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+        } ${
+          theme === 'dark'
+            ? 'bg-[#202020] border-[#2f2f2f]'
+            : 'bg-[#f7f6f3] border-gray-200'
         }`}
       >
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="p-6 border-b border-slate-800">
-            <h1 className="text-lg font-bold text-white">Interview Prep</h1>
-            <p className="text-sm text-slate-400 mt-1">Dynamic Build — 99% Coverage</p>
+          <div className={`p-6 border-b ${theme === 'dark' ? 'border-[#2f2f2f]' : 'border-gray-200'}`}>
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className={`text-lg font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  Interview Prep
+                </h1>
+                <p className={`text-sm mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                  Dynamic Build — 99% Coverage
+                </p>
+              </div>
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className={`p-2 rounded-md transition-all hover:scale-110 ${
+                  theme === 'dark'
+                    ? 'bg-[#2f2f2f] hover:bg-[#3a3a3a] text-yellow-400'
+                    : 'bg-gray-100 hover:bg-gray-200 text-gray-600'
+                }`}
+                title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-4 h-4" />
+                ) : (
+                  <Moon className="w-4 h-4" />
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 overflow-y-auto py-4 px-3">
-            <div className="space-y-1">
+          <nav className="flex-1 overflow-y-auto py-3 px-3">
+            <div className="space-y-0.5">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.id;
@@ -72,10 +109,14 @@ export default function Sidebar({ activeSection, onSectionChange, isOpen, onTogg
                       onSectionChange(item.id);
                       onToggle();
                     }}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all ${
                       isActive
-                        ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
-                        : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                        ? theme === 'dark'
+                          ? 'bg-[#2f2f2f] text-white'
+                          : 'bg-gray-200/70 text-gray-900'
+                        : theme === 'dark'
+                        ? 'text-gray-400 hover:text-white hover:bg-[#2f2f2f]/60'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                     }`}
                   >
                     <Icon className="w-4 h-4 flex-shrink-0" />
@@ -87,9 +128,11 @@ export default function Sidebar({ activeSection, onSectionChange, isOpen, onTogg
           </nav>
 
           {/* Footer */}
-          <div className="p-4 border-t border-slate-800">
-            <div className="text-xs text-slate-500">
-              <p className="font-medium text-slate-400">Architecture</p>
+          <div className={`p-4 border-t ${theme === 'dark' ? 'border-[#2f2f2f]' : 'border-gray-200'}`}>
+            <div className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
+              <p className={`font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                Architecture
+              </p>
               <p className="mt-1">Core KBs → Specialized Bridge → Router</p>
             </div>
           </div>
