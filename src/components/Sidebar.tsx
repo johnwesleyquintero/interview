@@ -23,7 +23,8 @@ interface SidebarProps {
 const navItems = [
   { id: 'career-story', label: 'Career Story', icon: User },
   { id: 'day-to-day', label: 'Day-to-Day', icon: Calendar },
-  { id: 'star-apn', label: 'STAR — APN Case', icon: AlertTriangle },
+  { id: 'star-apn', label: 'STAR — Success', icon: AlertTriangle },
+  { id: 'star-failure', label: 'STAR — Failure', icon: AlertTriangle },
   { id: 'fba-walkthrough', label: 'FBA Walkthrough', icon: Package },
   { id: 'commercial-optimization', label: 'Commercial Opt.', icon: TrendingUp },
   { id: 'framework', label: 'Response Framework', icon: LayoutGrid },
